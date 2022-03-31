@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Decorator.Interfaces
 {
-    public  interface InterfaceCarro
+    public  interface ICarro
     {
 
+
         string TipoCarro();
+       
     }
 }

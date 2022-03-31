@@ -7,11 +7,12 @@ using Decorator.Interfaces;
 
 namespace Decorator
 {
-    public class AirbagDecorator : CarroDecorator
+    internal class ArDecorator : CarroDecorator
     {
 
-        public AirbagDecorator(InterfaceCarro carro)
-         : base(carro)
+
+        public ArDecorator(ICarro carro)
+           : base(carro)
         {
 
         }
@@ -20,7 +21,7 @@ namespace Decorator
         public override string TipoCarro()
         {
             var carro = base.TipoCarro();
-            carro += ", com Airbag";
+            carro += "\n\t\t Opcional: Ar Condicionado Automotivo ";
             return carro;
         }
 

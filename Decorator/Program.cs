@@ -7,26 +7,26 @@ namespace Decorator
     {
         static void Main(string[] args)
         {
-            InterfaceCarro carro = new Carro();
+             
+            ICarro carro = new Carro();
 
-            //Decorator  com 1 items
-            InterfaceCarro airbagDecorator = new AirbagDecorator(carro);
-            InterfaceCarro arDecorator = new ArDecorator(carro);
-            InterfaceCarro insulfilmDecorator = new InsulfilmDecorator(carro);
-            InterfaceCarro mp3Decorator = new Mp3Decorator(carro);
-            InterfaceCarro xenonDecorator = new XenonDecorator(carro);
-
+            // Decorator  com 1 items      
+            ICarro airbagDecorator = new AirbagDecorator(carro);
+            ICarro arDecorator = new ArDecorator(carro);
+            ICarro insulfilmDecorator = new InsulfilmDecorator(carro);
+            ICarro mp3Decorator = new Mp3Decorator(carro);
+            ICarro xenonDecorator = new XenonDecorator(carro);
             //Decorator com 2  items
-            InterfaceCarro airbagArDecorator = new ArDecorator(airbagDecorator);
-            InterfaceCarro insulfilmXenonDecorator = new XenonDecorator(insulfilmDecorator);
+            ICarro airbagArDecorator = new ArDecorator(airbagDecorator);
+            ICarro insulfilmXenonDecorator = new XenonDecorator(insulfilmDecorator);
 
             //Decorator com 3  items
-            InterfaceCarro xenonInsulfilmMp3Decorator = new Mp3Decorator(insulfilmXenonDecorator);
+            ICarro xenonInsulfilmMp3Decorator = new Mp3Decorator(insulfilmXenonDecorator);
 
 
             //decorator com 5 items 
-            InterfaceCarro todosairbagDecorator = new AirbagDecorator(xenonInsulfilmMp3Decorator);
-            InterfaceCarro todosDecorator = new ArDecorator(todosairbagDecorator);
+            ICarro todosairbagDecorator = new AirbagDecorator(xenonInsulfilmMp3Decorator);
+            ICarro todosDecorator = new ArDecorator(todosairbagDecorator);
            
             string opc;
             do
@@ -43,7 +43,7 @@ namespace Decorator
             Console.WriteLine("\t\t\t\t\t|7| - INSULFILM  E FAROL DE XENON                    |");
             Console.WriteLine("\t\t\t\t\t|8| - FAROL DE XENON , INSULFILM  E  RADIO MP3 PLAYER|");
             Console.WriteLine("\t\t\t\t\t|9| - COM TODOS OS OPCIONAIS                         |");
-
+            Console.WriteLine("\t\t\t\t\t|10| - SEM OPCIONAIS                                 |");
             Console.Write("\t\t\t\t\t|____________________________________________________|\n" +
                           "\t\t\t\t\t|Opção: ");
             opc = Console.ReadLine();
@@ -98,7 +98,12 @@ namespace Decorator
                         Console.WriteLine(todosDecorator.TipoCarro());
                         Console.ReadKey();
                         break;
-                        default:
+                    case "10":
+                        Console.Clear();
+                        Console.WriteLine(carro.TipoCarro());
+                        Console.ReadKey();
+                        break;
+                    default:
                             Console.WriteLine("Opção invalida!");
                             break;
                     }

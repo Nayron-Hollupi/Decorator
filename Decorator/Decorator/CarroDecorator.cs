@@ -7,11 +7,12 @@ using Decorator.Interfaces;
 
 namespace Decorator
 {
-    public class CarroDecorator : InterfaceCarro
+    public class CarroDecorator : ICarro
     {
-        private readonly InterfaceCarro _carro;
+        //readonly impede que o campo seja substituído por uma instância diferente
+        private readonly ICarro _carro;
 
-        public CarroDecorator(InterfaceCarro carro) 
+        public CarroDecorator(ICarro carro) 
         {
             _carro = carro;
         }
@@ -20,5 +21,6 @@ namespace Decorator
             var carro = _carro.TipoCarro();
             return carro;
         }
+     
     }
 }

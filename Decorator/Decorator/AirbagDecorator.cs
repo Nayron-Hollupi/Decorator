@@ -7,21 +7,23 @@ using Decorator.Interfaces;
 
 namespace Decorator
 {
-    public class InsulfilmDecorator : CarroDecorator
+    public class AirbagDecorator : CarroDecorator
     {
 
-        public InsulfilmDecorator(InterfaceCarro carro)
-           : base(carro)
-        {
 
+        public AirbagDecorator(ICarro carro)
+         : base(carro)
+        {
+       
         }
 
 
         public override string TipoCarro()
         {
             var carro = base.TipoCarro();
-            carro += " , com Insulfilm";
+            carro += "\n\t\t Opcional: Airbag" ;
             return carro;
         }
+
     }
 }

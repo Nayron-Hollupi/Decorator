@@ -7,11 +7,11 @@ using Decorator.Interfaces;
 
 namespace Decorator
 {
-    internal class Mp3Decorator : CarroDecorator
+    public class InsulfilmDecorator : CarroDecorator
     {
 
-        public Mp3Decorator(InterfaceCarro carro)
-         : base(carro)
+        public InsulfilmDecorator(ICarro carro)
+           : base(carro)
         {
 
         }
@@ -20,9 +20,8 @@ namespace Decorator
         public override string TipoCarro()
         {
             var carro = base.TipoCarro();
-            carro += ", com Radio MP3 Player";
+            carro += "\n\t\t Opcional: Insulfilm";
             return carro;
         }
     }
 }
-

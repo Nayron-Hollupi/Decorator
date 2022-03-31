@@ -7,10 +7,11 @@ using Decorator.Interfaces;
 
 namespace Decorator
 {
-    public class XenonDecorator : CarroDecorator
+    internal class Mp3Decorator : CarroDecorator
     {
-        public XenonDecorator(InterfaceCarro carro)
-            : base(carro)
+
+        public Mp3Decorator(ICarro carro)
+         : base(carro)
         {
 
         }
@@ -19,10 +20,9 @@ namespace Decorator
         public override string TipoCarro()
         {
             var carro = base.TipoCarro();
-            carro += ", com  farol de xenon";
+            carro += "\n\t\t Opcional: Radio MP3 Player";
             return carro;
         }
-
-
     }
 }
+
